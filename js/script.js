@@ -5,15 +5,15 @@ const allSections = document.querySelector(".main-content");
 
 function firstpage() {
   //button click class
-  for (let i = 0; i < sectBtn.length; i++) {
-    sectBtn[i].addEventListener("click", function () {
-      let currentBtn = document.querySelectorAll(".active-btn");
-      currentBtn[0].className = currentBtn[0].className.replace(
-        "active-btn",
-        ""
-      );
-      this.className += "active-btn";
+  sectBtn.forEach((element) => {
+    element.addEventListener("click", () => {
+      const current = document.getElementsByClassName("active-btn");
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(" active-btn", "");
+      }
+      element.className += " active-btn";
     });
-  }
+  });
 }
+
 firstpage();
